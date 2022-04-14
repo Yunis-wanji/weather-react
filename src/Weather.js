@@ -2,7 +2,15 @@ export default function Weather(){
        
     function handleSubmit(event){
         event.preventDefault()
-        alert("I am Nairobi")
+        return(
+            <ul>
+                <li>Nairobi</li>
+                <li>
+                    Thurs 12:00pm
+                </li>
+                <li>Clouds</li>
+            </ul>
+        )
     }
 
     return(
