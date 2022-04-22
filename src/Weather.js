@@ -2,6 +2,8 @@ import axios from "axios";
 import React, {useState} from "react";
 import "./Weather.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 export default function Weather(){
        
     const[city, setCity]=useState("")
@@ -36,7 +38,7 @@ export default function Weather(){
     let form =  <form onSubmit={handleSubmit}>
     <input onChange={showWeather} type="search" placeholder="Type city"/>
     <input type="submit" value="search"/>
-    <button className="bg-success">Current</button>
+    <button className="bg-success ms-2">Current</button>
     </form>
     
     
@@ -47,23 +49,59 @@ export default function Weather(){
             <div className="row" >
                 {form}
          <div className="col-6">
-         <ul>
-       <li>
-        {temp.humidity}
+         <ul className="list-unstyled pt-5">
+       < li className="fs-1 ">
+        {temp.name}
+        <h3>
+            Friday 12:44
+        </h3>
         </li>
-        <li>{temp.temperature}</li>
-        <li>{temp.wind}</li>
+        <li className="fs-3"> <img src={temp.icon} alt="Weather Icon"/> {temp.temperature}°C</li>
         </ul>
         </div>
         <div className="col-6">
-        <ul>
-        <li>
-        <img src={temp.icon} alt="Weather Icon"/>
-        </li>
-        <li>{temp.name}</li>
+        <ul className="list-unstyled pt-5" >
+        <li className="fs-3 pt-5">humidity:{temp.humidity}%</li>
+        <li className="fs-3">wind:{temp.wind}km/hr</li>
         </ul>
         </div>
-        </div>
+        <div className="row">
+
+       <div className="col-2">
+           <h4>Mon</h4>
+           
+           <h4>13°C</h4>
+           </div>
+           <div className="col-2">
+           <h4>Tue</h4>
+           
+           <h4>13°C</h4>
+           </div>
+           <div className="col-2">
+           <h4>Wed</h4>
+           
+           <h4>13°C</h4>
+           </div>
+           <div className="col-2">
+           <h4>Thur</h4>
+           
+           <h4>13°C</h4>
+           </div>
+           <div className="col-2">
+           <h4>Sat</h4>
+           
+           <h4>13°C</h4>
+           </div>
+           <div className="col-2">
+           <h4>Sun</h4>
+           
+           <h4>13°C</h4>
+           </div>
+       </div>
+         </div>
+
+        
+        
         )
     }else{
         return(
