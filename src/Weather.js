@@ -16,7 +16,7 @@ export default function Weather(){
          icon:`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
          name: response.data.name
         });
-        console.log(response.data)
+        console.table(response.data)
 
            
        }
