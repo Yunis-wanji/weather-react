@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, {useState} from "react";
 import "./Weather.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Weather(){
        
     const[city, setCity]=useState("")
@@ -35,7 +36,7 @@ export default function Weather(){
     let form =  <form onSubmit={handleSubmit}>
     <input onChange={showWeather} type="search" placeholder="Type city"/>
     <input type="submit" value="search"/>
-    <button>Current</button>
+    <button className="bg-success">Current</button>
     </form>
     
     
@@ -43,19 +44,25 @@ export default function Weather(){
     if (load){
     
         return (
-            <div className="">
-         {form}
+            <div className="row" >
+                {form}
+         <div className="col-6">
          <ul>
        <li>
         {temp.humidity}
         </li>
         <li>{temp.temperature}</li>
         <li>{temp.wind}</li>
+        </ul>
+        </div>
+        <div className="col-6">
+        <ul>
         <li>
         <img src={temp.icon} alt="Weather Icon"/>
         </li>
         <li>{temp.name}</li>
         </ul>
+        </div>
         </div>
         )
     }else{

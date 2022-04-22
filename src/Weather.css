@@ -1,13 +1,10 @@
 body{
     background-image: url(/images/background\ clouds.jpg);
     background-position: center;
+    padding-top: 70px;
 }
 
 ul{
     text-decoration: none;
 }
 
-button{
-    background-color: green;
-    margin-left: 10px;
-}
